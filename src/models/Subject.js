@@ -7,4 +7,6 @@ const Subject = connection.define("subjects", {
     }
 })
 
+Subject.hasMany(Question)
+
 module.exports = Subject
