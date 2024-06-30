@@ -7,7 +7,7 @@ class ClientController {
              select * from clients
             `)
 
-            if (clients.rowCount === 0) {
+            if (clients[1].rowCount === 0) {
                 res.status(404).json({ messagem: "Nenhum cliente cadastrado" })
             } else {
                 res.status(200).json(clients[0])
@@ -78,7 +78,7 @@ class ClientController {
         `)
 
             if (clientExist[1].rowCount === 0) {
-                res.json({ messagem: "Client não encontrado!" })
+                res.json({ messagem: "Cliente não encontrado!" })
             }
 
             await connection.query(`
